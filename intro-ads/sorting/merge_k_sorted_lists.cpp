@@ -8,7 +8,7 @@ using namespace std;
  * Problem: Merge K Sorted Lists
  * Level: Hard
  * Neetcode Course: Algorithms and Data Structures for Beginners
- * Neetcode Topic: Sorting
+ * Neetcode Topic: Merge Sort
  */
 
 /*
