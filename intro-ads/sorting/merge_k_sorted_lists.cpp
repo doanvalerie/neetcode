@@ -3,6 +3,15 @@
 using namespace std;
 
 /*
+ * Author: Valerie Doan
+ * Date: August 11, 2024
+ * Problem: Merge K Sorted Lists
+ * Level: Hard
+ * Neetcode Course: Algorithms and Data Structures for Beginners
+ * Neetcode Topic: Sorting
+ */
+
+/*
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
