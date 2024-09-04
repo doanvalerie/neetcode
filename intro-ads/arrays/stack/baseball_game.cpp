@@ -49,7 +49,7 @@ int calPoints(vector<string> &operations)
 	return total;
 }
 
-int calPoints2(vector<string> &operations)
+int calPoints_v2(vector<string> &operations)
 {
 	stack<int> scores;
 	int total = 0;

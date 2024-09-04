@@ -33,7 +33,7 @@ int removeElement(vector<int> &nums, int val)
 	return k;
 }
 
-int removeElement2(vector<int> &nums, int val)
+int removeElement_v2(vector<int> &nums, int val)
 {
 	int k = 0;
 

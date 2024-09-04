@@ -28,7 +28,7 @@ int climbStairs(int n)
 	return v[n];
 }
 
-int _climbStairs(int n)
+int climbStairs_v2(int n)
 {
 	if (n == 0)
 	{
@@ -42,5 +42,5 @@ int _climbStairs(int n)
 	{
 		return 2;
 	}
-	return climbStairs(n - 1) + climbStairs(n - 2);
+	return climbStairs_v2(n - 1) + climbStairs_v2(n - 2);
 }

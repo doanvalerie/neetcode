@@ -18,16 +18,6 @@
  * };
  */
 
-ListNode *reverseList(ListNode *head)
-{
-	if (head == nullptr)
-	{
-		return nullptr;
-	}
-
-	return _reverseList(head, head, head->next);
-}
-
 ListNode *_reverseList(ListNode *head, ListNode *prev, ListNode *curr)
 {
 	if (head == prev)
@@ -46,4 +36,14 @@ ListNode *_reverseList(ListNode *head, ListNode *prev, ListNode *curr)
 	curr = next;
 
 	return _reverseList(head, prev, curr);
+}
+
+ListNode *reverseList(ListNode *head)
+{
+	if (head == nullptr)
+	{
+		return nullptr;
+	}
+
+	return _reverseList(head, head, head->next);
 }
