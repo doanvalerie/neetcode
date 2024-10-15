@@ -22,81 +22,81 @@ using namespace std;
 class PageNode
 {
 public:
-	PageNode(string name) : name(name), prev(nullptr), next(nullptr) {}
+    PageNode(string name) : name(name), prev(nullptr), next(nullptr) {}
 
-	string name;
-	PageNode *prev;
-	PageNode *next;
+    string name;
+    PageNode *prev;
+    PageNode *next;
 };
 
 class BrowserHistory
 {
 public:
-	BrowserHistory(string homepage)
-	{
-		curr_page = new PageNode(homepage);
-		head = curr_page;
-		tail = curr_page;
-	}
+    BrowserHistory(string homepage)
+    {
+        curr_page = new PageNode(homepage);
+        head = curr_page;
+        tail = curr_page;
+    }
 
-	void visit(string url)
-	{
-		PageNode *prev_page = curr_page;
-		PageNode *next_page = prev_page->next;
+    void visit(string url)
+    {
+        PageNode *prev_page = curr_page;
+        PageNode *next_page = prev_page->next;
 
-		while (next_page != nullptr)
-		{
-			PageNode *temp = next_page->next;
-			delete next_page;
-			next_page = temp;
-		}
+        while (next_page != nullptr)
+        {
+            PageNode *temp = next_page->next;
+            delete next_page;
+            next_page = temp;
+        }
 
-		PageNode *new_page = new PageNode(url);
-		tail = new_page;
-		curr_page = new_page;
+        PageNode *new_page = new PageNode(url);
+        tail = new_page;
+        curr_page = new_page;
 
-		prev_page->next = curr_page;
-		curr_page->prev = prev_page;
-	}
+        prev_page->next = curr_page;
+        curr_page->prev = prev_page;
+    }
 
-	string back(int steps)
-	{
-		int i = 0;
+    string back(int steps)
+    {
+        int i = 0;
 
-		while (curr_page != head)
-		{
-			i++;
-			curr_page = curr_page->prev;
+        while (curr_page != head)
+        {
+            i++;
+            curr_page = curr_page->prev;
 
-			if (i == steps)
-			{
-				break;
-			}
-		}
+            if (i == steps)
+            {
+                break;
+            }
+        }
 
-		return curr_page->name;
-	}
+        return curr_page->name;
+    }
 
-	string forward(int steps)
-	{
-		int i = 0;
+    string forward(int steps)
+    {
+        int i = 0;
 
-		while (curr_page != tail)
-		{
-			i++;
-			curr_page = curr_page->next;
+        while (curr_page != tail)
+        {
+            i++;
+            curr_page = curr_page->next;
 
-			if (i == steps)
-			{
-				break;
-			}
-		}
+            if (i == steps)
+            {
+                break;
+            }
+        }
 
-		return curr_page->name;
-	}
+        return curr_page->name;
+    }
 
 private:
-	PageNode *head;
-	PageNode *tail;
-	PageNode *curr_page;
+    PageNode *head;
+    PageNode *tail;
+    PageNode *curr_page;
 };

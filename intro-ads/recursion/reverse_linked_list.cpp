@@ -20,30 +20,30 @@
 
 ListNode *_reverseList(ListNode *head, ListNode *prev, ListNode *curr)
 {
-	if (head == prev)
-	{
-		head->next = nullptr;
-	}
+    if (head == prev)
+    {
+        head->next = nullptr;
+    }
 
-	if (curr == nullptr)
-	{
-		return prev;
-	}
+    if (curr == nullptr)
+    {
+        return prev;
+    }
 
-	ListNode *next = curr->next;
-	curr->next = prev;
-	prev = curr;
-	curr = next;
+    ListNode *next = curr->next;
+    curr->next = prev;
+    prev = curr;
+    curr = next;
 
-	return _reverseList(head, prev, curr);
+    return _reverseList(head, prev, curr);
 }
 
 ListNode *reverseList(ListNode *head)
 {
-	if (head == nullptr)
-	{
-		return nullptr;
-	}
+    if (head == nullptr)
+    {
+        return nullptr;
+    }
 
-	return _reverseList(head, head, head->next);
+    return _reverseList(head, head, head->next);
 }

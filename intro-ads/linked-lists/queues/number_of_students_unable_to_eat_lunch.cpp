@@ -14,30 +14,30 @@ using namespace std;
 
 int countStudents(vector<int> &students, vector<int> &sandwiches)
 {
-	queue<int> q;
+    queue<int> q;
 
-	for (int student : students)
-	{
-		q.push(student);
-	}
+    for (int student : students)
+    {
+        q.push(student);
+    }
 
-	int i = 0;
-	int rotations = 0;
+    int i = 0;
+    int rotations = 0;
 
-	while (rotations != q.size())
-	{
-		if (q.front() == sandwiches[i])
-		{
-			i++;
-			rotations = 0;
-		}
-		else
-		{
-			q.push(q.front());
-			rotations++;
-		}
-		q.pop();
-	}
+    while (rotations != q.size())
+    {
+        if (q.front() == sandwiches[i])
+        {
+            i++;
+            rotations = 0;
+        }
+        else
+        {
+            q.push(q.front());
+            rotations++;
+        }
+        q.pop();
+    }
 
-	return q.size();
+    return q.size();
 }

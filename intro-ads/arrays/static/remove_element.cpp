@@ -13,37 +13,37 @@ using namespace std;
 
 int removeElement(vector<int> &nums, int val)
 {
-	int k = 0;
+    int k = 0;
 
-	for (int i = 0; i < nums.size(); i++)
-	{
-		if (nums[k] == val)
-		{
-			for (int j = k + 1; j < nums.size(); j++)
-			{
-				nums[j - 1] = nums[j];
-			}
-		}
-		else
-		{
-			k++;
-		}
-	}
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (nums[k] == val)
+        {
+            for (int j = k + 1; j < nums.size(); j++)
+            {
+                nums[j - 1] = nums[j];
+            }
+        }
+        else
+        {
+            k++;
+        }
+    }
 
-	return k;
+    return k;
 }
 
 int removeElement_v2(vector<int> &nums, int val)
 {
-	int k = 0;
+    int k = 0;
 
-	for (int i = 0; i < nums.size(); i++)
-	{
-		if (nums[i] != val)
-		{
-			nums[k++] = nums[i];
-		}
-	}
+    for (int i = 0; i < nums.size(); i++)
+    {
+        if (nums[i] != val)
+        {
+            nums[k++] = nums[i];
+        }
+    }
 
-	return k;
+    return k;
 }

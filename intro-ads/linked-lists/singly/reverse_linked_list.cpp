@@ -20,22 +20,22 @@
 
 ListNode *reverseList(ListNode *head)
 {
-	ListNode *prev = head;
-	ListNode *curr = nullptr;
+    ListNode *prev = head;
+    ListNode *curr = nullptr;
 
-	if (prev != nullptr)
-	{
-		curr = prev->next;
-		prev->next = nullptr;
-	}
+    if (prev != nullptr)
+    {
+        curr = prev->next;
+        prev->next = nullptr;
+    }
 
-	while (curr != nullptr)
-	{
-		ListNode *next = curr->next;
-		curr->next = prev;
-		prev = curr;
-		curr = next;
-	}
+    while (curr != nullptr)
+    {
+        ListNode *next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
 
-	return prev;
+    return prev;
 }

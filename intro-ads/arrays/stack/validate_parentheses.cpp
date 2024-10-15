@@ -15,36 +15,36 @@ using namespace std;
 
 bool isValid(string s)
 {
-	stack<char> st;
-	unordered_map<char, char> map = {
-		{'}', '{'},
-		{']', '['},
-		{')', '('},
-	};
+    stack<char> st;
+    unordered_map<char, char> map = {
+        {'}', '{'},
+        {']', '['},
+        {')', '('},
+    };
 
-	for (int i = 0; i < s.size(); i++)
-	{
-		char ch = s[i];
+    for (int i = 0; i < s.size(); i++)
+    {
+        char ch = s[i];
 
-		switch (ch)
-		{
-		case '(':
-		case '[':
-		case '{':
-			st.push(ch);
-			break;
-		default:
-			if (!st.empty() && map[ch] == st.top())
-			{
-				st.pop();
-			}
-			else
-			{
-				return false;
-			}
-			break;
-		}
-	}
+        switch (ch)
+        {
+        case '(':
+        case '[':
+        case '{':
+            st.push(ch);
+            break;
+        default:
+            if (!st.empty() && map[ch] == st.top())
+            {
+                st.pop();
+            }
+            else
+            {
+                return false;
+            }
+            break;
+        }
+    }
 
-	return st.empty();
+    return st.empty();
 }

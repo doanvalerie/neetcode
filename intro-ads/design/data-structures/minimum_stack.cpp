@@ -14,33 +14,33 @@ using namespace std;
 class MinStack
 {
 public:
-	MinStack() {}
+    MinStack() {}
 
-	void push(int val)
-	{
-		int min = val;
-		if (st.size() != 0 && st.top().second < min)
-		{
-			min = st.top().second;
-		}
-		st.push({val, min});
-	}
+    void push(int val)
+    {
+        int min = val;
+        if (st.size() != 0 && st.top().second < min)
+        {
+            min = st.top().second;
+        }
+        st.push({val, min});
+    }
 
-	void pop()
-	{
-		st.pop();
-	}
+    void pop()
+    {
+        st.pop();
+    }
 
-	int top()
-	{
-		return st.top().first;
-	}
+    int top()
+    {
+        return st.top().first;
+    }
 
-	int getMin()
-	{
-		return st.top().second;
-	}
+    int getMin()
+    {
+        return st.top().second;
+    }
 
 private:
-	stack<pair<int, int>> st;
+    stack<pair<int, int>> st;
 };
