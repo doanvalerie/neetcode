@@ -36,3 +36,24 @@ int maxDepth(TreeNode *root)
     helper(root, res, 0);
     return res;
 }
+
+/* -------------------- REVIEW -------------------- */
+
+/*
+ * Author: Valerie Doan
+ * Date: November 2, 2024
+ * Problem: Maximum Depth of Binary Tree
+ * Level: Easy
+ * Neetcode Course: Neetcode 150
+ * Neetcode Topic: Trees
+ */
+
+int maxDepth(TreeNode *root)
+{
+    if (!root)
+    {
+        return 0;
+    }
+
+    return 1 + max(maxDepth(root->left), maxDepth(root->right));
+}
